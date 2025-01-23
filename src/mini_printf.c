@@ -33,7 +33,11 @@ int mini_printf(const char* format, ...)
     va_start(args, format);
     for (size_t i = 0; format[i]; i ++) {
         if (format[i] == FLAG_MARK) {
-            len += interpret_flag(&format[i + 1], args);
+            int tmp = interpret_flag(&format[i + 1], args);
+            if (tmp < 0) {
+                return -1;
+            }
+            len += tmp;
             i ++;
         } else {
             write(1, &format[i], 1);
