@@ -31,7 +31,7 @@ typedef struct flag_s {
 //? functions
 //* mini_printf.c
 int mini_printf(const char* format, ...);
-int interpret_flag(char flag, const char* format, va_list args);
+int interpret_flag(const char* format, va_list args);
 
 //* flags.c
 flag_t* get_flags();
