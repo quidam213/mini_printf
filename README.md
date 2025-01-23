@@ -61,7 +61,7 @@ gcc main.c -L. -l:mini_printf.a
 
 Execute your binary !
 
-[example](![example](image.png))
+![example_in_terminal](image.png)
 
 ### Author
 dam, github : quidam213

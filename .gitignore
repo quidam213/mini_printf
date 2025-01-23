@@ -54,3 +54,4 @@ dkms.conf
 # lib test
 a.out
 main.c
+.vscode
