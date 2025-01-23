@@ -11,33 +11,33 @@ flag_t* get_flags()
 {
     static flag_t flags[N_FLAGS] = {
         (flag_t){
-            .value = "c",
+            .value = 'c',
             .function = &c_flag
         },
         (flag_t){
-            .value = "s",
+            .value = 's',
             .function = &s_flag
         },
         (flag_t){
-            .value = "d",
+            .value = 'd',
             .function = &d_flag
         },
         (flag_t){
-            .value = "i",
+            .value = 'i',
             .function = &d_flag
         },
         (flag_t){
-            .value = "f",
+            .value = 'f',
             .function = &f_flag
         },
         (flag_t){
-            .value = "b",
+            .value = 'b',
             .function = &b_flag
         },
         (flag_t){
-            .value = "%",
+            .value = '%',
             .function = &modulo_flag
-        },
+        }
     };
 
     return flags;

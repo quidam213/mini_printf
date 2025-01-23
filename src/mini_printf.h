@@ -13,21 +13,24 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 
 //? defines
 #define FLAG_MARK '%'
 #define N_FLAGS 7
+#define FLAG_NOT_FOUND "Flag not found.\n"
+#define NULL_FORMAT "Format entered is null.\n"
 
 //? structures
 typedef struct flag_s {
-    char* value;
+    char value;
     int (*function) (va_list);
 } flag_t;
 
 //? functions
 //* mini_printf.c
 int mini_printf(const char* format, ...);
-int interpret_flag(const char* format, va_list args);
+int interpret_flag(char flag, const char* format, va_list args);
 
 //* flags.c
 flag_t* get_flags();
