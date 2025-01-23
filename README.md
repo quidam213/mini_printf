@@ -13,6 +13,12 @@ mini_printf("%c", 'A');
 mini_printf("%s", "hello");
 ```
 
+%b : bool
+```c
+mini_printf("%b", true);
+mini_printf("%b", false);
+```
+
 %d : int
 %i : int
 ```c
