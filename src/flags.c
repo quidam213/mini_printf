@@ -35,8 +35,8 @@ flag_t* get_flags()
             .function = &b_flag
         },
         (flag_t){
-            .value = '%',
-            .function = &modulo_flag
+            .value = FLAG_MARK,
+            .function = &mark_flag
         }
     };
 
@@ -45,12 +45,16 @@ flag_t* get_flags()
 
 int c_flag(va_list arg)
 {
-    return -1;
+    char c = va_arg(arg, int);
+
+    return write(1, &c, 1);
 }
 
 int s_flag(va_list arg)
 {
-    return -1;
+    char *str = va_arg(arg, char *);
+
+    return write(1, str, strlen(str));
 }
 
 int d_flag(va_list arg)
@@ -65,10 +69,15 @@ int f_flag(va_list arg)
 
 int b_flag(va_list arg)
 {
-    return -1;
+    bool b = va_arg(arg, int);
+    char c = b ? '1' : '0';
+
+    return write(1, &c, 1);
 }
 
-int modulo_flag(va_list arg)
+int mark_flag(va_list arg)
 {
-    return -1;
+    char c = FLAG_MARK;
+
+    return write(1, &c, 1);
 }

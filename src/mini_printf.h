@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 //? defines
 #define FLAG_MARK '%'
@@ -39,6 +40,6 @@ int s_flag(va_list arg);
 int d_flag(va_list arg);
 int f_flag(va_list arg);
 int b_flag(va_list arg);
-int modulo_flag(va_list arg);
+int mark_flag(va_list arg);
 
 #endif /* !MINI_PRINTF_H_ */
