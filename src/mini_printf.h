@@ -18,7 +18,7 @@
 
 //? defines
 #define FLAG_MARK '%'
-#define N_FLAGS 7
+#define N_FLAGS 6
 #define FLAG_NOT_FOUND "Flag not found.\n"
 #define NULL_FORMAT "Format entered is null.\n"
 
@@ -38,8 +38,10 @@ flag_t* get_flags();
 int c_flag(va_list arg);
 int s_flag(va_list arg);
 int d_flag(va_list arg);
-int f_flag(va_list arg);
 int b_flag(va_list arg);
 int mark_flag(va_list arg);
+
+//* my_itoa.c
+char* my_itoa(int x);
 
 #endif /* !MINI_PRINTF_H_ */

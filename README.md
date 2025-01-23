@@ -27,11 +27,6 @@ mini_printf("%i", 21);
 mini_printf("%d", -42);
 ```
 
-%f : float
-```c
-mini_printf("%f", 1.67);
-```
-
 %% : NOTHING
 ```c
 mini_printf("%%");

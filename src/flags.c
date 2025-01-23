@@ -27,10 +27,6 @@ flag_t* get_flags()
             .function = &d_flag
         },
         (flag_t){
-            .value = 'f',
-            .function = &f_flag
-        },
-        (flag_t){
             .value = 'b',
             .function = &b_flag
         },
@@ -52,19 +48,20 @@ int c_flag(va_list arg)
 
 int s_flag(va_list arg)
 {
-    char *str = va_arg(arg, char *);
+    char* str = va_arg(arg, char *);
 
     return write(1, str, strlen(str));
 }
 
 int d_flag(va_list arg)
 {
-    return -1;
-}
+    int x = va_arg(arg, int);
+    char* str = my_itoa(x);
+    size_t len = strlen(str);
 
-int f_flag(va_list arg)
-{
-    return -1;
+    write(1, str, len);
+    free(str);
+    return len;
 }
 
 int b_flag(va_list arg)
